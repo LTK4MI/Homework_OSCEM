@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="a7466ced-5e53-44ca-a07e-6f6c37205044" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -20,10 +23,15 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "App Engine server.Unnamed.executor": "Run",
     "Python.code.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "last_opened_file_path": "C:/Users/Leon/Desktop/OpenSourceModelling/Homework_OSCEM",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "vue.rearranger.settings.migration": "true"
   }
@@ -43,7 +51,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1712564783743</updated>
-      <workItem from="1712564784797" duration="158000" />
+      <workItem from="1712564784797" duration="1163000" />
     </task>
     <servers />
   </component>
