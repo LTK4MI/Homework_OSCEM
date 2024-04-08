@@ -1,7 +1,13 @@
-from code import zufallszahl_generieren
-from code import
+from code import powerset
+from code import testen
 
 
 
-def zufallszahl_generieren():
-    assert zufallszahl_generieren
+def test_leer():
+    assert powerset([]) == [[]]
+def test_klein():
+    assert powerset([1,2]) == [[],[1],[2],[1,2]]
+
+
+def test_testen():
+    assert testen([1,2,3]) == [[1],[2],[3],[1,2]]

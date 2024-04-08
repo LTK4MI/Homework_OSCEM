@@ -1,44 +1,35 @@
-import random
+import pytest
 
-def zufallszahl_generieren():
-    """Generiert eine Zufallszahl zwischen 1 und 100."""
-    return random.randint(1, 100)
-def spiel_starten():
-    """Implementiert den Spielablauf."""
-    zahl = zufallszahl_generieren()
-    versuche = 0
-
-    while versuche < 4:
-        eingabe = input("Gib eine Zahl zwischen 1 und 100 ein: ")
-
-        if eingabe_prüfen(eingabe):
-            eingabe = int(eingabe)
-            if eingabe == zahl:
-                ausgabe(
-                    "Gratulation, du hast die Zahl erraten! Du hast dafür " + str(versuche) + " Versuche gebraucht.")
-                break
-            elif eingabe < zahl:
-                ausgabe("Die gesuchte Zahl ist größer.")
-            else:
-                ausgabe("Die gesuchte Zahl ist kleiner.")
-            versuche += 1
-        else:
-            ausgabe("Ungültige Eingabe. Bitte gib eine Zahl zwischen 1 und 100 ein.")
-
-    if versuche == 4:
-        ausgabe("Leider hast du die Zahl nicht erraten. Die richtige Zahl war " + str(zahl) + ".")
-def eingabe_prüfen(eingabe):
-    """Prüft, ob die Eingabe eine gültige Zahl ist."""
-    try:
-        zahl = int(eingabe)
-        if 1 <= zahl <= 100:
+l: list
+l = [[]]
+def testen(s: list, l: list) -> bool:
+    """testet, ob eine Liste von Zahlen schon in der Liste aller
+    Teilmengen vorkommt
+    Args:
+        s: zu prüfende Liste
+        l: Liste aller bsiherigen Teilmengen"""
+    for x in l:
+        if x == s:
             return True
-        else:
-            return False
-    except ValueError:
-        return False
 
-def ausgabe(nachricht):
-    """Gibt die Nachricht auf der Konsole aus."""
-    print(nachricht)
-spiel_starten()
+def powerset(s: list) -> list:
+    """Gibt die Potenzmenge einer gegebenen Liste aus
+    Args:
+        s: Liste, die die Menge beschriebt, aus der die Potenzmenge
+        gebildet wird
+
+    Notes: Ich weiss, dass das Programm nicht funktioniert, konnte
+        den Fehler aber leider nicht mehr beheben (Ich war mir nicht
+        sicher wie ich die Liste zurückgebe)
+        """
+    global l
+    if testen(s, l) != True:
+        l += [s]
+    else:
+        pass
+    for x in s:
+        s.remove(x)
+        print(s)
+        powerset(s)
+    if len(l) == 2**len(s):
+        return l
