@@ -1,0 +1,106 @@
+Index: test_code.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/test_code.py b/test_code.py
+--- a/test_code.py	(revision 17beba5f01e1e9304540f31d530c2bc4ff1f5fdf)
++++ b/test_code.py	(date 1712587639344)
+@@ -1,1 +1,7 @@
++from code import zufallszahl_generieren
++from code import
++
+ 
++
++def zufallszahl_generieren():
++    assert zufallszahl_generieren
+Index: code.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import random\r\n\r\n\r\ndef zufallszahl_generieren():\r\n    \"\"\"Generiert eine Zufallszahl zwischen 1 und 100.\"\"\"\r\n    return random.randint(1, 100)\r\n\r\n\r\ndef spiel_starten():\r\n    \"\"\"Implementiert den Spielablauf.\"\"\"\r\n    zahl = zufallszahl_generieren()\r\n    versuche = 0\r\n\r\n    while versuche < 6:\r\n        eingabe = input(\"Gib eine Zahl zwischen 1 und 100 ein: \")\r\n\r\n        if eingabe_prüfen(eingabe):\r\n            eingabe = int(eingabe)\r\n            if eingabe == zahl:\r\n                ausgabe(\r\n                    \"Gratulation, du hast die Zahl erraten! Du hast dafür \" + str(versuche) + \" Versuche gebraucht.\")\r\n                break\r\n            elif eingabe < zahl:\r\n                ausgabe(\"Die gesuchte Zahl ist größer.\")\r\n            else:\r\n                ausgabe(\"Die gesuchte Zahl ist kleiner.\")\r\n            versuche += 1\r\n        else:\r\n            ausgabe(\"Ungültige Eingabe. Bitte gib eine Zahl zwischen 1 und 100 ein.\")\r\n\r\n    if versuche == 6:\r\n        ausgabe(\"Leider hast du die Zahl nicht erraten. Die richtige Zahl war \" + str(zahl) + \".\")\r\n\r\n\r\ndef eingabe_prüfen(eingabe):\r\n    \"\"\"Prüft, ob die Eingabe eine gültige Zahl ist.\"\"\"\r\n    try:\r\n        zahl = int(eingabe)\r\n        if 1 <= zahl <= 100:\r\n            return True\r\n        else:\r\n            return False\r\n    except ValueError:\r\n        return False\r\n\r\n\r\ndef ausgabe(nachricht):\r\n    \"\"\"Gibt die Nachricht auf der Konsole aus.\"\"\"\r\n    print(nachricht)\r\n\r\n\r\nspiel_starten()\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/code.py b/code.py
+--- a/code.py	(revision 17beba5f01e1e9304540f31d530c2bc4ff1f5fdf)
++++ b/code.py	(date 1712587639350)
+@@ -1,17 +1,14 @@
+ import random
+ 
+-
+ def zufallszahl_generieren():
+     """Generiert eine Zufallszahl zwischen 1 und 100."""
+     return random.randint(1, 100)
+-
+-
+ def spiel_starten():
+     """Implementiert den Spielablauf."""
+     zahl = zufallszahl_generieren()
+     versuche = 0
+ 
+-    while versuche < 6:
++    while versuche < 4:
+         eingabe = input("Gib eine Zahl zwischen 1 und 100 ein: ")
+ 
+         if eingabe_prüfen(eingabe):
+@@ -28,10 +25,8 @@
+         else:
+             ausgabe("Ungültige Eingabe. Bitte gib eine Zahl zwischen 1 und 100 ein.")
+ 
+-    if versuche == 6:
++    if versuche == 4:
+         ausgabe("Leider hast du die Zahl nicht erraten. Die richtige Zahl war " + str(zahl) + ".")
+-
+-
+ def eingabe_prüfen(eingabe):
+     """Prüft, ob die Eingabe eine gültige Zahl ist."""
+     try:
+@@ -43,10 +38,7 @@
+     except ValueError:
+         return False
+ 
+-
+ def ausgabe(nachricht):
+     """Gibt die Nachricht auf der Konsole aus."""
+     print(nachricht)
+-
+-
+ spiel_starten()
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"a7466ced-5e53-44ca-a07e-6f6c37205044\" name=\"Changes\" comment=\"\">\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/code.py\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/code.py\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"MarkdownSettingsMigration\">\r\n    <option name=\"stateVersion\" value=\"1\" />\r\n  </component>\r\n  <component name=\"ProjectColorInfo\">{\n  &quot;associatedIndex&quot;: 5\n}</component>\r\n  <component name=\"ProjectId\" id=\"2eoJ1cbGtQDGhOFr4N7y6sVpKZb\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\"><![CDATA[{\n  \"keyToString\": {\n    \"App Engine server.Unnamed.executor\": \"Run\",\n    \"Python.code.executor\": \"Run\",\n    \"RunOnceActivity.OpenProjectViewOnStart\": \"true\",\n    \"RunOnceActivity.ShowReadmeOnStart\": \"true\",\n    \"git-widget-placeholder\": \"main\",\n    \"ignore.virus.scanning.warn.message\": \"true\",\n    \"last_opened_file_path\": \"C:/Users/Leon/Desktop/OpenSourceModelling/Homework_OSCEM\",\n    \"node.js.detected.package.eslint\": \"true\",\n    \"node.js.detected.package.tslint\": \"true\",\n    \"node.js.selected.package.eslint\": \"(autodetect)\",\n    \"node.js.selected.package.tslint\": \"(autodetect)\",\n    \"nodejs_package_manager_path\": \"npm\",\n    \"vue.rearranger.settings.migration\": \"true\"\n  }\n}]]></component>\r\n  <component name=\"SharedIndexes\">\r\n    <attachedChunks>\r\n      <set>\r\n        <option value=\"bundled-python-sdk-09665e90c3a7-b11f5e8da5ad-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-233.15026.15\" />\r\n      </set>\r\n    </attachedChunks>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"a7466ced-5e53-44ca-a07e-6f6c37205044\" name=\"Changes\" comment=\"\" />\r\n      <created>1712564783743</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1712564783743</updated>\r\n      <workItem from=\"1712564784797\" duration=\"1163000\" />\r\n      <workItem from=\"1712566009506\" duration=\"678000\" />\r\n    </task>\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"com.intellij.coverage.CoverageDataManagerImpl\">\r\n    <SUITE FILE_PATH=\"coverage/Homework_OSCEM$code.coverage\" NAME=\"code Coverage Results\" MODIFIED=\"1712566066188\" SOURCE_PROVIDER=\"com.intellij.coverage.DefaultCoverageFileProvider\" RUNNER=\"coverage.py\" COVERAGE_BY_TEST_ENABLED=\"true\" COVERAGE_TRACING_ENABLED=\"false\" WORKING_DIRECTORY=\"$PROJECT_DIR$\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 17beba5f01e1e9304540f31d530c2bc4ff1f5fdf)
++++ b/.idea/workspace.xml	(date 1712588009196)
+@@ -7,6 +7,7 @@
+     <list default="true" id="a7466ced-5e53-44ca-a07e-6f6c37205044" name="Changes" comment="">
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/code.py" beforeDir="false" afterPath="$PROJECT_DIR$/code.py" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/test_code.py" beforeDir="false" afterPath="$PROJECT_DIR$/test_code.py" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -60,7 +61,7 @@
+       <option name="presentableId" value="Default" />
+       <updated>1712564783743</updated>
+       <workItem from="1712564784797" duration="1163000" />
+-      <workItem from="1712566009506" duration="678000" />
++      <workItem from="1712566009506" duration="1516000" />
+     </task>
+     <servers />
+   </component>
+@@ -68,6 +69,6 @@
+     <option name="version" value="3" />
+   </component>
+   <component name="com.intellij.coverage.CoverageDataManagerImpl">
+-    <SUITE FILE_PATH="coverage/Homework_OSCEM$code.coverage" NAME="code Coverage Results" MODIFIED="1712566066188" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
++    <SUITE FILE_PATH="coverage/Homework_OSCEM$code.coverage" NAME="code Coverage Results" MODIFIED="1712587105582" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+   </component>
+ </project>
+\ No newline at end of file

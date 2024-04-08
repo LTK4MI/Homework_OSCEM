@@ -1,17 +1,14 @@
 import random
 
-
 def zufallszahl_generieren():
     """Generiert eine Zufallszahl zwischen 1 und 100."""
     return random.randint(1, 100)
-
-
 def spiel_starten():
     """Implementiert den Spielablauf."""
     zahl = zufallszahl_generieren()
     versuche = 0
 
-    while versuche < 6:
+    while versuche < 4:
         eingabe = input("Gib eine Zahl zwischen 1 und 100 ein: ")
 
         if eingabe_prüfen(eingabe):
@@ -28,10 +25,8 @@ def spiel_starten():
         else:
             ausgabe("Ungültige Eingabe. Bitte gib eine Zahl zwischen 1 und 100 ein.")
 
-    if versuche == 6:
+    if versuche == 4:
         ausgabe("Leider hast du die Zahl nicht erraten. Die richtige Zahl war " + str(zahl) + ".")
-
-
 def eingabe_prüfen(eingabe):
     """Prüft, ob die Eingabe eine gültige Zahl ist."""
     try:
@@ -43,10 +38,7 @@ def eingabe_prüfen(eingabe):
     except ValueError:
         return False
 
-
 def ausgabe(nachricht):
     """Gibt die Nachricht auf der Konsole aus."""
     print(nachricht)
-
-
 spiel_starten()
