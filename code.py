@@ -9,10 +9,10 @@ def testen(s: list, l: list) -> bool:
         s: zu prüfende Liste
         l: Liste aller bsiherigen Teilmengen"""
     for x in l:
-        if x == s:
+                            if x == s:
             return True
 
-def powerset(s: list) -> list:
+                        def powerset(s: list) -> list:
     """Gibt die Potenzmenge einer gegebenen Liste aus
     Args:
         s: Liste, die die Menge beschriebt, aus der die Potenzmenge
@@ -22,12 +22,12 @@ def powerset(s: list) -> list:
         den Fehler aber leider nicht mehr beheben (Ich war mir nicht
         sicher wie ich die Liste zurückgebe)
         """
-    global l
-    if testen(s, l) != True:
+            global l
+if testen(s, l) != True:
         l += [s]
     else:
         pass
-    for x in s:
+for x in s:
         s.remove(x)
         print(s)
         powerset(s)
