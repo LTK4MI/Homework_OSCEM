@@ -8,7 +8,7 @@ def testen(s: list, l: list) -> bool:
     Args:
         s: zu prüfende Liste
         l: Liste aller bsiherigen Teilmengen"""
-    for x in l:
+for x in l:
         if x == s:
             return True
 
